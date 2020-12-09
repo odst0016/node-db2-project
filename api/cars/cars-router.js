@@ -35,7 +35,7 @@ router.post("/", validateData, (req, res) => {
 
 router.put("/:id", validateId, validateData, (req, res) => {
   Cars.update(req.params.id, req.body)
-    .then((data) => {
+    .then(() => {
       return Cars.getById(req.params.id);
     })
     .then((car) => {
